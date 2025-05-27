@@ -91,14 +91,17 @@ function Feature({feature}: {
 }) {
     const t = useTranslate()
     return <div className={classNames(
-        "flex flex-col transition-all hover:scale-105",
+        "flex flex-col transition-all",
         "py-8 px-8 rounded-lg cursor-default",
         "bg-base-200 text-base-content",
         "border border-base-content/10",
-        "shadow hover:shadow-lg",
+        "shadow",
         "gradient-border",
-        "hover:animate-[shake_0.5s_ease-in-out_infinite]",
-        "@keyframes shake { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-1deg); } 75% { transform: rotate(1deg); } }"
+        "hover:translate-y-[-5px]",
+        "hover:shadow-lg hover:shadow-primary/20",
+        "hover:bg-primary hover:bg-opacity-10",
+        "hover:animate-[shake_0.5s_cubic-bezier(.36,.07,.19,.97)_both]",
+        "@keyframes shake { 0%, 100% { transform: translateY(-5px) rotate(0deg); } 25% { transform: translateY(-5px) rotate(-1deg); } 75% { transform: translateY(-5px) rotate(1deg); } }"
     )}>
         <div className="text-xl sm:text-2xl font-bold">
             {t(feature.title)}
