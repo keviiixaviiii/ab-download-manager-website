@@ -47,26 +47,6 @@ function Hero(props: { icon: ImageProp, title: string, description: string }) {
                         <span>{t("home_hero_get_app")}</span>
                     </div>
                 </MyLink>
-                {/*<MyLink href={Constants.openSource.sourceCodeUrl} target="_blank">*/}
-                {/*    <div className={classNames(*/}
-                {/*        "btn btn-primary btn-outline btn-lg rounded-full border-2",*/}
-                {/*        "min-w-48",*/}
-                {/*        "font-bold",*/}
-                {/*    )}>*/}
-                {/*        <Icon height={32} width={32} icon="mdi:github"/>*/}
-                {/*        <span>{t("source_code")}</span>*/}
-                {/*    </div>*/}
-                {/*</MyLink>*/}
-                {/*
-                <div className={classNames(
-                    "btn btn-outline btn-primary btn-lg rounded-full border-2",
-                    "min-w-48",
-                    "font-bold",
-                )}>
-                    {t("home_hero_see_guides")}
-                </div>
-*/}
-
             </div>
         </div>
     </div>
@@ -106,7 +86,6 @@ function Screenshots(props: { images: MainAppScreenshot }) {
     </div>
 }
 
-
 function Feature({feature}: {
     feature: FeatureProp,
 }) {
@@ -117,7 +96,9 @@ function Feature({feature}: {
         "bg-base-200 text-base-content",
         "border border-base-content/10",
         "shadow hover:shadow-lg",
-        "gradient-border"
+        "gradient-border",
+        "hover:animate-[shake_0.5s_ease-in-out_infinite]",
+        "@keyframes shake { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-1deg); } 75% { transform: rotate(1deg); } }"
     )}>
         <div className="text-xl sm:text-2xl font-bold">
             {t(feature.title)}
@@ -128,7 +109,6 @@ function Feature({feature}: {
         </div>
     </div>
 }
-
 
 function Features(props: { features: FeatureProp[] }) {
     const t = useTranslate()
